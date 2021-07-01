@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BookController extends Controller
 {
@@ -10,6 +11,11 @@ class BookController extends Controller
     {
         $books = DB::select('select * from books');
         return $books;
+    }
+    public function view($id)
+    {
+        $book = DB::select('select * from books where id = :id', ['id' => $id]);
+        return $book;
     }
     public function cetak($judul)
     {

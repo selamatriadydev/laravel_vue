@@ -78,7 +78,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\BookController;
 Route::prefix('v1')->group(function () {
-    Route::get('buku/{judul}', [BookController::class, 'index']);
+    Route::get('books', [BookController::class, 'index']);
+    Route::get('book/{id}', [BookController::class, 'view'])->where('id', '[0-9]+');;
 });
    
    
