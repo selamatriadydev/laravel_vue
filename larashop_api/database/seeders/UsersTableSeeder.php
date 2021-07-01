@@ -3,6 +3,10 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\DB;
+// use Faker\Factory;
+use Carbon;
 
 class UsersTableSeeder extends Seeder
 {

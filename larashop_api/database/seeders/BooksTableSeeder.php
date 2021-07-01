@@ -3,7 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
+use Faker\Factory;
+use Carbon;
 class BooksTableSeeder extends Seeder
 {
     /**

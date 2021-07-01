@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Faker\Factory;
+use Carbon;
 
 class CategoriesTableSeeder extends Seeder
 {
