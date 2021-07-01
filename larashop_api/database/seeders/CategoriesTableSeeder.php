@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Faker\Factory;
 use Carbon;
 
@@ -16,7 +17,7 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         $categories = [];
-        $faker = Faker\Factory::create();
+        $faker = Factory::create();
         $image_categories = ['abstract', 'animals', 'business', 'cats', 'city',
         'food',
         'nature', 'technics', 'transport'];

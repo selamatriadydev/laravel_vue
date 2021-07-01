@@ -3,9 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\DB;
-// use Faker\Factory;
+use Faker\Factory;
 use Carbon;
 
 class UsersTableSeeder extends Seeder
@@ -18,7 +17,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $users = [];
-        $faker = Faker\Factory::create();
+        $faker = Factory::create();
         for($i=0;$i<5;$i++){
         $avatar_path = 'public/images/users';
         $avatar_fullpath = $faker->image( $avatar_path, 200, 250, 'people',

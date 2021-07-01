@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Faker\Factory;
 use Carbon;
 class BooksTableSeeder extends Seeder
@@ -15,7 +16,7 @@ class BooksTableSeeder extends Seeder
     public function run()
     {
         $books = [];
-        $faker = Faker\Factory::create();
+        $faker = Factory::create();
         $image_categories = ['abstract', 'animals', 'business', 'cats',
         'city', 'food',
         'nature', 'technics', 'transport'];
