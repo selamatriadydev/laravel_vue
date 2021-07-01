@@ -15,7 +15,7 @@ class BookController extends Controller
         // $books = DB::select('select * from books');
         // return $books;
         //eloquent
-        $books = new BookCollectionResource(Book::get());
+        $books = new BookCollectionResource(Book::paginate(5));
         return $books;
     }
     public function view($id)
