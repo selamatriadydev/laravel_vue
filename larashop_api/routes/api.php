@@ -77,10 +77,19 @@ use Illuminate\Support\Facades\Route;
 
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\AuthController;
 Route::prefix('v1')->group(function () {
     Route::get('books', [BookController::class, 'index']);
-    Route::get('book/{id}', [BookController::class, 'view'])->where('id', '[0-9]+');;
+    Route::get('book/{id}', [BookController::class, 'view'])->where('id', '[0-9]+');
+    Route::post('login', [AuthController::class, 'login']);
+    // tambahkan sekalian untuk register dan logout :
+    Route::post('register', [AuthController::class, 'register']);
+    Route::post('logout', [AuthController::class, 'logout']);
 });
+// Route::apiResources([
+//     'books' => 'BookController',
+//     'categories' => 'CategoryController'
+// ]);
    
    
    
