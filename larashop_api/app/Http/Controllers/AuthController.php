@@ -62,8 +62,7 @@ class AuthController extends Controller
         // validasi gagal
             $errors = $validator->errors();
             $message = $errors;
-        }
-        else{
+        }else{
         // validasi sukses
             $user = User::create([
             'name' => $request->name,
@@ -72,7 +71,7 @@ class AuthController extends Controller
             'roles' => json_encode(['CUSTOMER']),
             ]);
             if($user){
-                Auth::login($user);
+                // Auth::login($user);
                 $user->generateToken();
                 $status = "success";
                 $message = "register successfully";
@@ -91,6 +90,15 @@ class AuthController extends Controller
     }
     public function logout(Request $request)
     {
-
+        $user = Auth::user();
+        if ($user) {
+            $user->api_token = null;
+            $user->save();
+        }
+        return response()->json([
+        'status' => 'success',
+        'message' => 'logout berhasil',
+        'data' => null
+        ], 200); 
     }
 }
